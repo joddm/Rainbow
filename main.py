@@ -63,7 +63,6 @@ def log(s):
 
 # Environment
 env = Env(args)
-env.train()
 action_space = env.action_space()
 
 

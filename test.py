@@ -13,8 +13,7 @@ Ts, rewards, Qs = [], [], []
 
 # Test DQN
 def test(args, T, dqn, val_mem, evaluate=False):
-  env = Env(args)
-  env.eval()
+  env = Env(args, episode_life=False)
   Ts.append(T)
   T_rewards, T_Qs = [], []
 
