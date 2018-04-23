@@ -18,12 +18,12 @@ class Env():
     self.training = True  # Consistent with model training mode
 
   def reset(self):
-    state = torch.Tensor(self.env.reset()._force().transpose(2, 0, 1))
+    state = self.dtype(self.env.reset()._force().transpose(2, 0, 1))
     return state
 
   def step(self, action):
     obs, reward, done, _ = self.env.step(action)
-    state = torch.Tensor(obs._force().transpose(2, 0, 1))
+    state = self.dtype(obs._force().transpose(2, 0, 1))
     return state, reward, done
 
   def action_space(self):
